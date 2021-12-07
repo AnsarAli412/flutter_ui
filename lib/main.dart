@@ -7,47 +7,26 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+     num days = 30;
+     String name = "Fluttre";
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
       home: Scaffold(
+        drawer: Drawer(),
+        appBar: AppBar(title: Text("Flutter Ui"),),
         body: Center(
-          child: myContainer(),
+          child:Container(
+      child: Center(child: Text("$days day of $name"),),
+      )
         ),
       ),
-    );
-  }
-
-  Container myContainer(){
-    return Container(
-        height: double.infinity,
-        width: 100,
-        decoration: BoxDecoration(
-            border: Border(
-                top: BorderSide(width: 1,color: Colors.deepPurpleAccent),
-                bottom: BorderSide(width: 2,color: Colors.purpleAccent),
-                left: BorderSide(width: 3,color: Colors.indigo),
-                right: BorderSide(width: 4,color: Colors.lightBlueAccent)
-            )
-        ),
-        child:Padding(
-          padding: EdgeInsets.all(10),
-          child: Container(
-            decoration: BoxDecoration(
-                border: Border(
-                    top: BorderSide(width: 1,color: Colors.deepPurpleAccent),
-                    bottom: BorderSide(width: 2,color: Colors.purpleAccent),
-                    left: BorderSide(width: 3,color: Colors.indigo),
-                    right: BorderSide(width: 4,color: Colors.lightBlueAccent)
-                )
-            ), 
-          ),
-        )
     );
   }
 }
