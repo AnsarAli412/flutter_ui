@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/screens/wedgets.dart';
+import 'package:flutter_ui/screens/widget_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,24 +11,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-     num days = 30;
-     String name = "Fluttre";
-
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
+      home: StartApp(),
+    );
+  }
+}
+
+class StartApp extends StatelessWidget {
+  const StartApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: customAppBar("Flutter Ui", Colors.yellow),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: Colors.yellow,
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => WidgetList())),
       ),
-      home: Scaffold(
-        drawer: Drawer(),
-        appBar: AppBar(title: Text("Flutter Ui"),),
-        body: Center(
-          child:Container(
-      child: Center(child: Text("$days day of $name"),),
-      )
-        ),
-      ),
+      drawer: Drawer(),
     );
   }
 }
