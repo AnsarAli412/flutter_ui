@@ -5,14 +5,16 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          "Login Page",
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.blue),
-        ),
-      ),
+    return Material(
+      child: Column(
+        children: [
+          headerImage()
+        ],
+      )
     );
+  }
+
+  Image headerImage(){
+    return Image.asset('assets/images/login_img.png');
   }
 }
